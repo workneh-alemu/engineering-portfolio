@@ -2,280 +2,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Workneh Alemu - Mechatronics and Electromechanical Engineering Portfolio">
-  <title>Workneh Alemu | Engineering Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Workneh Alemu - Mechatronics and Electromechanical Engineering Portfolio">
+<title>Workneh Alemu | Engineering Portfolio</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+:root {
+  --bg: #080f1e;
+  --panel: #111d31;
+  --blue: #38bdf8;
+  --cyan: #67e8f9;
+  --white: #f1f5f9;
+  --muted: #a5b4c8;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b1220;
-      color: #e5e7eb;
-      line-height: 1.7;
-    }
+html { scroll-behavior: smooth; }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 8%;
-      background: #111c2e;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.7;
+}
 
-    nav h2 {
-      color: #38bdf8;
-    }
+a { text-decoration: none; }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-    }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: rgba(8,15,30,.95);
+  border-bottom: 1px solid #24344d;
+}
 
-    nav a:hover {
-      color: #38bdf8;
-    }
+.logo {
+  color: var(--blue);
+  font-size: 21px;
+  font-weight: bold;
+}
 
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 10%;
-    }
+nav a {
+  color: var(--white);
+  margin-left: 22px;
+  font-size: 14px;
+}
 
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 58px);
-      color: white;
-      line-height: 1.2;
-    }
+nav a:hover { color: var(--blue); }
 
-    .hero h1 span {
-      color: #38bdf8;
-    }
+.hero {
+  min-height: 85vh;
+  padding: 90px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 55px;
+}
 
-    .hero h3 {
-      margin: 20px 0;
-      color: #94a3b8;
-    }
+.hero-content { max-width: 650px; }
 
-    .hero p {
-      max-width: 700px;
-      color: #cbd5e1;
-    }
+.tag {
+  color: var(--cyan);
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 24px;
-      background: #0284c7;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      width: fit-content;
-    }
+h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  line-height: 1.15;
+  margin: 20px 0;
+}
 
-    section {
-      padding: 65px 10%;
-    }
+h1 span { color: var(--blue); }
 
-    section h2 {
-      color: #38bdf8;
-      margin-bottom: 25px;
-      font-size: 30px;
-    }
+.hero h3 {
+  color: var(--muted);
+  font-size: 20px;
+  margin-bottom: 22px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
+.hero p {
+  color: var(--muted);
+  max-width: 570px;
+}
 
-    .card {
-      background: #172338;
-      padding: 24px;
-      border-radius: 10px;
-      border: 1px solid #26364d;
-    }
+.portrait {
+  width: 310px;
+  height: 390px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 24px;
+  border: 3px solid var(--blue);
+  box-shadow: 0 0 45px rgba(56,189,248,.2);
+}
 
-    .card h3 {
-      color: #7dd3fc;
-      margin-bottom: 12px;
-    }
+.btn {
+  display: inline-block;
+  margin: 25px 12px 0 0;
+  padding: 12px 23px;
+  background: var(--blue);
+  color: #06111e;
+  border-radius: 7px;
+  font-weight: bold;
+}
 
-    .card p {
-      color: #cbd5e1;
-    }
+.btn.outline {
+  background: transparent;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+}
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+section { padding: 75px 10%; }
 
-    .skills span {
-      background: #172338;
-      padding: 9px 16px;
-      border-radius: 20px;
-      border: 1px solid #334155;
-    }
+.section-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
 
-    .contact a {
-      color: #7dd3fc;
-      text-decoration: none;
-      margin-right: 18px;
-    }
+.section-title span { color: var(--blue); }
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #111c2e;
-      color: #94a3b8;
-    }
+.about-text {
+  color: var(--muted);
+  max-width: 850px;
+}
 
-    @media (max-width: 600px) {
-      nav {
-        padding: 18px 5%;
-      }
+.skills, .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
 
-      nav a {
-        margin-left: 8px;
-        font-size: 13px;
-      }
+.card {
+  background: var(--panel);
+  border: 1px solid #253650;
+  padding: 25px;
+  border-radius: 13px;
+  transition: .25s;
+}
 
-      section {
-        padding: 50px 6%;
-      }
-    }
-  </style>
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue);
+}
+
+.card h3 {
+  color: var(--cyan);
+  margin-bottom: 12px;
+}
+
+.card p { color: var(--muted); font-size: 14px; }
+
+.skill {
+  background: var(--panel);
+  border: 1px solid #253650;
+  padding: 15px;
+  text-align: center;
+  border-radius: 9px;
+}
+
+.education {
+  background: var(--panel);
+  border-left: 4px solid var(--blue);
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 750px;
+}
+
+.education p { color: var(--muted); }
+
+.contact {
+  background: #0d192b;
+  text-align: center;
+}
+
+.contact p { color: var(--muted); }
+
+.contact a {
+  display: inline-block;
+  margin: 15px 10px;
+  color: var(--cyan);
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+  border-top: 1px solid #253650;
+}
+
+@media(max-width:800px) {
+  nav { flex-direction: column; gap: 15px; }
+  nav a { margin: 0 7px; }
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 60px 7%;
+  }
+  .hero p { margin: auto; }
+  .portrait { width: 240px; height: 300px; }
+  section { padding: 55px 7%; }
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <h2>Workneh Alemu</h2>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav>
+  <div class="logo">WORKNEH ALEM U.</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-  <header class="hero">
+<header class="hero">
+  <div class="hero-content">
+    <div class="tag">ENGINEERING • DESIGN • INNOVATION</div>
+
     <h1>Hello, I'm <span>Workneh Alemu</span></h1>
 
     <h3>Mechatronics & Electromechanical Engineer</h3>
 
     <p>
-      I am an engineering graduate from Addis Ababa Science
-      and Technology University, passionate about mechatronics,
+      An engineering graduate from Addis Ababa Science and
+      Technology University, passionate about mechatronics,
       PCB design, embedded systems, robotics, automation,
-      mechanical design, and 3D printing.
-      I enjoy transforming engineering ideas into practical solutions.
+      mechanical design and innovative engineering solutions.
     </p>
 
     <a href="#projects" class="btn">Explore My Projects</a>
-  </header>
+    <a href="#contact" class="btn outline">Contact Me</a>
+  </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      My engineering background combines mechanical design,
-      electrical systems, electronics, and programming.
-      I enjoy developing practical prototypes and integrating
-      different engineering disciplines to solve real-world problems.
-    </p>
-  </section>
+  <img class="portrait" src="profile.jpg"
+       alt="Workneh Alemu - Engineering Portfolio">
+</header>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills">
-      <span>SolidWorks</span>
-      <span>KiCad</span>
-      <span>Arduino</span>
-      <span>Python</span>
-      <span>MATLAB</span>
-      <span>AutoCAD</span>
-      <span>PCB Design</span>
-      <span>3D Printing</span>
-      <span>Proteus</span>
-      <span>Embedded Systems</span>
-      <span>Electrical Design</span>
-      <span>Automation</span>
+<section id="about">
+  <h2 class="section-title"><span>01.</span> About Me</h2>
+  <p class="about-text">
+    I am an Electromechanical Engineering graduate with an
+    interdisciplinary background in mechanical design,
+    electrical systems, electronics and programming.
+
+    I enjoy transforming ideas into practical engineering
+    solutions through CAD design, PCB development,
+    prototyping, embedded systems and automation.
+
+    My goal is to contribute to innovative engineering
+    projects while continuously developing my technical
+    and professional skills.
+  </p>
+</section>
+
+<section id="skills">
+  <h2 class="section-title"><span>02.</span> Technical Skills</h2>
+
+  <div class="skills">
+    <div class="skill">SolidWorks & CAD</div>
+    <div class="skill">KiCad PCB Design</div>
+    <div class="skill">Arduino</div>
+    <div class="skill">Python</div>
+    <div class="skill">MATLAB / Simulink</div>
+    <div class="skill">AutoCAD</div>
+    <div class="skill">3D Printing</div>
+    <div class="skill">Proteus</div>
+    <div class="skill">Embedded Systems</div>
+    <div class="skill">Electrical Installation</div>
+    <div class="skill">Motor Control</div>
+    <div class="skill">Prototyping</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title"><span>03.</span> Featured Projects</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>Dual-Axis Welding Positioner</h3>
+      <p>
+        Semi-automated welding positioner integrating
+        mechanical design, motor control and Arduino-based
+        embedded systems.
+      </p>
     </div>
-  </section>
 
-  <section id="projects">
-    <h2>Featured Engineering Projects</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Dual-Axis Welding Positioner</h3>
-        <p>
-          Semi-automated welding positioner integrating
-          mechanical design, motor control, and Arduino.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>PCB Design</h3>
-        <p>
-          Electronic circuit design, schematic development,
-          PCB layout, and prototyping.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>CAD & 3D Printing</h3>
-        <p>
-          Mechanical modeling and physical prototyping
-          using SolidWorks and 3D printing.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Electrical Installation</h3>
-        <p>
-          Electrical drawings, lighting, sockets,
-          fire detection, and BOQ preparation.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Firefighting Drone</h3>
-        <p>
-          Computer vision and fire detection research
-          using Python, OpenCV, and YOLO.
-        </p>
-      </div>
+    <div class="card">
+      <h3>PCB Design</h3>
+      <p>
+        Electronic schematic development, PCB layout
+        and hardware design using KiCad.
+      </p>
     </div>
-  </section>
 
-  <section id="contact" class="contact">
-    <h2>Let's Connect</h2>
-    <p>Interested in engineering, technology, and collaboration?</p>
-    <br>
-    <a href="https://github.com/workneh-alemu">GitHub</a>
-    <a href="https://www.linkedin.com/">LinkedIn</a>
-  </section>
+    <div class="card">
+      <h3>CAD & 3D Printing</h3>
+      <p>
+        Mechanical product modeling and physical
+        prototyping using SolidWorks and 3D printing.
+      </p>
+    </div>
 
-  <footer>
-    <p>© 2026 Workneh Alemu | Engineering Portfolio</p>
-  </footer>
+    <div class="card">
+      <h3>Electrical Installation</h3>
+      <p>
+        Building electrical drawings, lighting,
+        socket layouts, fire detection and BOQ preparation.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Firefighting Drone Research</h3>
+      <p>
+        Computer vision research for fire and smoke
+        detection using Python, OpenCV and YOLO.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Plastic Recycling Innovation</h3>
+      <p>
+        Development of practical plastic recycling
+        concepts and prototyping solutions.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="section-title"><span>04.</span> Education</h2>
+
+  <div class="education">
+    <h3>BSc in Electromechanical Engineering</h3>
+    <p>Addis Ababa Science and Technology University</p>
+    <p>Graduated: 2026</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title"><span>05.</span> Let's Connect</h2>
+  <p>Open to engineering opportunities, collaboration and innovation.</p>
+
+  <a href="https://github.com/workneh-alemu">
+    GitHub
+  </a>
+
+  <a href="https://www.linkedin.com/">
+    LinkedIn
+  </a>
+
+  <a href="https://t.me/">
+    Telegram
+  </a>
+</section>
+
+<footer>
+  © 2026 Workneh Alemu | Engineering Portfolio
+</footer>
 
 </body>
 </html>
