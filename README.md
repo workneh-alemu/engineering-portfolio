@@ -46,8 +46,8 @@ Exploration of computer vision and fire/smoke detection using Python, OpenCV, an
 
 ## 📫 Connect With Me
 
-- LinkedIn: [My LinkedIn Profile]https://www.linkedin.com/in/workneh-alemu-904614327)
-- Telegram: [Contact Me] (Wokilo2_1)
+- LinkedIn: https://www.linkedin.com/in/workneh-alemu-904614327)
+- Telegram: @Wokilo2_1
 - GitHub: https://github.com/workneh-alemu
 
 ---
